@@ -6,8 +6,10 @@ kind: Role
 metadata:
   name: {{ include "gha-runner-scale-set.kubeModeRoleName" . }}
   namespace: {{ .Release.Namespace }}
+  {{- with .Values.finalizers }}
   finalizers:
-    - actions.github.com/cleanup-protection
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
 rules:
 - apiGroups: [""]
   resources: ["pods"]

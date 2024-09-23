@@ -1,3 +1,9 @@
+
+
+finalizers:
+  - actions.github.com/cleanup-protection
+
+
 ## githubConfigUrl is the GitHub url for where you want to configure runners
 ## ex: https://github.com/myorg/myrepo or https://github.com/myorg
 githubConfigUrl: ""
